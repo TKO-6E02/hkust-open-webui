@@ -649,10 +649,10 @@ async def generate_chat_completion(
 
         r = await session.request(
             method="POST",
-            url=f"{url}/chat/completions",
+            url=f"{url}/chat/completions?api-version=2024-06-01",
             data=payload,
             headers={
-                "Authorization": f"Bearer {key}",
+                "api-key": f"{key}",
                 "Content-Type": "application/json",
                 **(
                     {
